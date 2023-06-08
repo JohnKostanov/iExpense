@@ -1,41 +1,34 @@
 //
 //  AddView.swift
-//  iExpense
+//  AddExpenseView
 //
 //  Created by Джон Костанов on 30/12/21.
 //
 
 import SwiftUI
 
-struct AddView: View {
-    @State private var name = ""
-    @State private var type = "Personal"
-    @State private var amount = 0.0
-    
+struct AddExpenseView: View {
     @ObservedObject var expenses: Expenses
     @Environment(\.dismiss) var dismiss
 
-    let types = ["Business", "Personal"]
-
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
-                TextField("Name", text: $name)
+                TextField("Name", text: $expenses.item.name)
 
-                Picker("Type", selection: $type) {
-                    ForEach(types, id: \.self) {
+                Picker("Type", selection: $expenses.item.type) {
+                    ForEach(expenses.item.types, id: \.self) {
                         Text($0)
                     }
                 }
 
-                TextField("Amount", value: $amount, format: .currency(code: "USD"))
+                TextField("Amount", value: $expenses.item.amount, format: .currency(code: "USD"))
                     .keyboardType(.decimalPad)
             }
             .navigationTitle("Add new expense")
             .toolbar {
                 Button("Save") {
-                    let item = ExpenseItem(name: name, type: type, amount: amount)
-                    expenses.items.append(item)
+                    expenses.addItem()
                     dismiss()
                 }
             }
@@ -45,6 +38,6 @@ struct AddView: View {
 
 struct AddView_Previews: PreviewProvider {
     static var previews: some View {
-        AddView(expenses: Expenses())
+        AddExpenseView(expenses: Expenses())
     }
 }

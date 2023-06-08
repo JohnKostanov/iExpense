@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E110098F277DE37800415D1B /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E110098E277DE37800415D1B /* AddView.swift */; };
+		E110098F277DE37800415D1B /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E110098E277DE37800415D1B /* AddExpenseView.swift */; };
 		E13DBD762779E56000172CC2 /* iExpenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13DBD752779E56000172CC2 /* iExpenseApp.swift */; };
-		E13DBD782779E56000172CC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13DBD772779E56000172CC2 /* ContentView.swift */; };
+		E13DBD782779E56000172CC2 /* AllExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13DBD772779E56000172CC2 /* AllExpensesView.swift */; };
 		E13DBD7A2779E56100172CC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E13DBD792779E56100172CC2 /* Assets.xcassets */; };
 		E13DBD7D2779E56100172CC2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E13DBD7C2779E56100172CC2 /* Preview Assets.xcassets */; };
 		E16EF787277DB08100EF84A3 /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16EF786277DB08100EF84A3 /* ExpenseItem.swift */; };
@@ -17,10 +17,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E110098E277DE37800415D1B /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		E110098E277DE37800415D1B /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
 		E13DBD722779E56000172CC2 /* iExpense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iExpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E13DBD752779E56000172CC2 /* iExpenseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseApp.swift; sourceTree = "<group>"; };
-		E13DBD772779E56000172CC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E13DBD772779E56000172CC2 /* AllExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllExpensesView.swift; sourceTree = "<group>"; };
 		E13DBD792779E56100172CC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E13DBD7C2779E56100172CC2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E16EF786277DB08100EF84A3 /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
@@ -57,11 +57,8 @@
 		E13DBD742779E56000172CC2 /* iExpense */ = {
 			isa = PBXGroup;
 			children = (
-				E13DBD752779E56000172CC2 /* iExpenseApp.swift */,
-				E13DBD772779E56000172CC2 /* ContentView.swift */,
-				E110098E277DE37800415D1B /* AddView.swift */,
-				E16EF786277DB08100EF84A3 /* ExpenseItem.swift */,
-				E16EF788277DC25400EF84A3 /* Expenses.swift */,
+				E18B964F2A320CBC0008F702 /* App */,
+				E18B96502A320CC50008F702 /* Scenes */,
 				E13DBD792779E56100172CC2 /* Assets.xcassets */,
 				E13DBD7B2779E56100172CC2 /* Preview Content */,
 			);
@@ -74,6 +71,57 @@
 				E13DBD7C2779E56100172CC2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E18B964F2A320CBC0008F702 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E13DBD752779E56000172CC2 /* iExpenseApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E18B96502A320CC50008F702 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E18B96512A320D3A0008F702 /* MainScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E18B96512A320D3A0008F702 /* MainScene */ = {
+			isa = PBXGroup;
+			children = (
+				E18B96522A320DE30008F702 /* Model */,
+				E18B96532A320E000008F702 /* ViewModel */,
+				E18B96542A320E120008F702 /* View */,
+			);
+			path = MainScene;
+			sourceTree = "<group>";
+		};
+		E18B96522A320DE30008F702 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E16EF786277DB08100EF84A3 /* ExpenseItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E18B96532A320E000008F702 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E16EF788277DC25400EF84A3 /* Expenses.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E18B96542A320E120008F702 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E13DBD772779E56000172CC2 /* AllExpensesView.swift */,
+				E110098E277DE37800415D1B /* AddExpenseView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,8 +195,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E16EF789277DC25400EF84A3 /* Expenses.swift in Sources */,
-				E13DBD782779E56000172CC2 /* ContentView.swift in Sources */,
-				E110098F277DE37800415D1B /* AddView.swift in Sources */,
+				E13DBD782779E56000172CC2 /* AllExpensesView.swift in Sources */,
+				E110098F277DE37800415D1B /* AddExpenseView.swift in Sources */,
 				E16EF787277DB08100EF84A3 /* ExpenseItem.swift in Sources */,
 				E13DBD762779E56000172CC2 /* iExpenseApp.swift in Sources */,
 			);
@@ -281,13 +329,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iExpense/Preview Content\"";
+				DEVELOPMENT_TEAM = 5K285D3RL3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -295,9 +344,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.johnkostanov.iExpense;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -309,13 +361,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iExpense/Preview Content\"";
+				DEVELOPMENT_TEAM = 5K285D3RL3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,9 +376,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.johnkostanov.iExpense;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
