@@ -11,6 +11,7 @@ protocol Expendable: Identifiable, Codable, Equatable {
     var name: String { get }
     var type: String { get }
     var amount: Double { get }
+    var types: [String] { get set }
 }
 
 struct ExpenseItem: Expendable {

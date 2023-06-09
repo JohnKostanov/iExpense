@@ -14,6 +14,7 @@ protocol ExpendableItems: ObservableObject {
     func saveItems()
     func loadItems()
     func removeItems(at offsets: IndexSet)
+    func addItem()
 }
 
 class Expenses: ExpendableItems {
@@ -23,12 +24,17 @@ class Expenses: ExpendableItems {
     @Published var item: Item
     
     init() {
-        item = ExpenseItem(name: "", type: "Personal", amount: 0.0)
+        item = Expenses.crearItem()
     }
     
     func addItem() {
         let item = ExpenseItem(name: item.name, type: item.type, amount: item.amount)
         items.insert(item, at: 0)
+    }
+    
+    static func crearItem() -> Item {
+        let item = ExpenseItem(name: "", type: "Personal", amount: 0.0)
+        return item
     }
 }
 

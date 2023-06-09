@@ -26,6 +26,9 @@ struct AddExpenseView: View {
                     .keyboardType(.decimalPad)
             }
             .navigationTitle("Add new expense")
+            .onAppear() {
+                expenses.item = Expenses.crearItem()
+            }
             .toolbar {
                 Button("Save") {
                     expenses.addItem()
